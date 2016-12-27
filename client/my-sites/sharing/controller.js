@@ -73,8 +73,6 @@ module.exports = {
 
 	buttons: function( context, next ) {
 		var SharingButtons = require( 'my-sites/sharing/buttons/buttons' ),
-			sharingButtonsList = require( 'lib/sharing-buttons-list' )(),
-			postTypesList = require( 'lib/post-types-list' )(),
 			site = sites.getSelectedSite(),
 			basePath = route.sectionify( context.path ),
 			baseAnalyticsPath;
@@ -96,9 +94,7 @@ module.exports = {
 		}
 
 		context.contentComponent = React.createElement( SharingButtons, {
-			site: site,
-			buttons: sharingButtonsList,
-			postTypes: postTypesList
+			site: site
 		} );
 
 		next();
